@@ -169,6 +169,7 @@ const CanvasAnimation = ({ children }) => {
           position: 'absolute',
           top: 0,
           left: 0,
+          zIndex: -2,
           backgroundImage:
             "url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg')",
         }}
