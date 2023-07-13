@@ -2,7 +2,11 @@ import { MainLogo } from './Header.styled';
 import findYourMovieLogo from './findYourMovieLogo.png';
 
 const Header = () => {
-  return <MainLogo src={findYourMovieLogo} />;
+  return (
+    <header style={{ display: 'flex', justifyContent: 'center' }}>
+      <MainLogo  src={findYourMovieLogo} />
+    </header>
+  );
 };
 
 export default Header;
