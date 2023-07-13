@@ -3,8 +3,14 @@ import findYourMovieLogo from './findYourMovieLogo.png';
 
 const Header = () => {
   return (
-    <header style={{ display: 'flex', justifyContent: 'center' }}>
-      <MainLogo  src={findYourMovieLogo} />
+    <header
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        paddingBottom: '50px',
+      }}
+    >
+      <MainLogo src={findYourMovieLogo} />
     </header>
   );
 };
