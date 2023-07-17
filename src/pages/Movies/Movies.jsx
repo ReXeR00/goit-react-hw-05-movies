@@ -1,3 +1,6 @@
-const Movie = () => {};
+const Movie = () => {
+
+    return <div></div>;
+};
 
 export default Movie;
