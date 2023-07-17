@@ -6,9 +6,11 @@ import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
 import NotFound from 'pages/NotFound/NotFound';
 import Loader from 'components/Loader/Loader';
+import { useState } from 'react';
 // import { lazy } from 'react';
 
 export const App = () => {
+  const [loading, setLoading] = useState(false);
   const StyledLink = styled(NavLink)`
     color: black;
 
@@ -16,12 +18,18 @@ export const App = () => {
       color: orange;
     }
   `;
+
+
+
+
+    
+
   return (
     <div>
       <CanvasAnimation>
         <Navbar></Navbar>
-        <Loader></Loader>
-
+        if(loading === true)?
+        <Loader></Loader>:
         <nav>
           <StyledLink to="/">Home</StyledLink>
           <StyledLink to="/Movies">Movies</StyledLink>
@@ -29,7 +37,6 @@ export const App = () => {
           <StyledLink to="People"></StyledLink>
           <StyledLink to="Trending"></StyledLink> */}
         </nav>
-
         <Routes>
           <Route path="/goit-react-hw-05-movies" element={<Home />} />
           <Route path="/Movies" element={<Movies />} />

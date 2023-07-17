@@ -1,30 +1,23 @@
 import React from 'react';
-import {
-  WrapLoader,
-  Loader,
-  WrapText,
-  Text,
-  LoaderText,
-} from './Loader.styled';
+import { WrapLoader, LetterSpan } from './Loader.styled';
 
-const LoaderComponent = () => {
+const Loader = () => {
   return (
     <WrapLoader>
-      <Loader>
-        {[...Array(4)].map((_, index) => (
-          <div className="box" key={index}></div>
-        ))}
-      </Loader>
-      <WrapText>
-        <Text>
-          {['L', 'O', 'A', 'D', 'I', 'N', 'G', '...'].map((val, index) => (
-            <span key={index}>{val}</span>
-          ))}
-        </Text>
-      </WrapText>
-      <LoaderText>wait please</LoaderText>
+      <h1>
+        <LetterSpan delay={1.2}>L</LetterSpan>
+        <LetterSpan delay={1.3}>o</LetterSpan>
+        <LetterSpan delay={1.4}>a</LetterSpan>
+        <LetterSpan delay={1.5}>d</LetterSpan>
+        <LetterSpan delay={1.6}>i</LetterSpan>
+        <LetterSpan delay={1.7}>n</LetterSpan>
+        <LetterSpan delay={1.8}>g</LetterSpan>
+        <LetterSpan delay={1.9}>.</LetterSpan>
+        <LetterSpan delay={2}>.</LetterSpan>
+        <LetterSpan delay={2.1}>.</LetterSpan>
+      </h1>
     </WrapLoader>
   );
 };
 
-export default LoaderComponent;
+export default Loader;
