@@ -1,3 +1,3 @@
-export * from './App'
-export * from './CanvasAnimation'
-export * from './Header'
+export * from './App';
+export * from './CanvasAnimation';
+export * from './NavBar';

@@ -1,10 +1,11 @@
 import { Routes, NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import CanvasAnimation from '../CanvasAnimation/CanvasAnimation';
-import Header from 'components/Header/Header';
+import Navbar from 'components/NavBar/NavBar';
 import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
 import NotFound from 'pages/NotFound/NotFound';
+import Loader from 'components/Loader/Loader';
 // import { lazy } from 'react';
 
 export const App = () => {
@@ -18,7 +19,8 @@ export const App = () => {
   return (
     <div>
       <CanvasAnimation>
-        <Header></Header>
+        <Navbar></Navbar>
+        <Loader></Loader>
 
         <nav>
           <StyledLink to="/">Home</StyledLink>

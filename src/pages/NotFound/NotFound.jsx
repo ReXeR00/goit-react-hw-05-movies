@@ -11,9 +11,9 @@ const NotFound = () => {
   return (
     <DivNotFound>
       <Image404 src={error404} alt="Error 404 image"></Image404>
-      <Titleannouncement>Page Not Found :(</Titleannouncement>
+      <Titleannouncement>Sorry Page Not Found :(</Titleannouncement>
       <Announcement>
-        You can search for the page you want here or run to the homepage
+      Click button to run home.
       </Announcement>
       <Button href="">GO HOME</Button>
     </DivNotFound>
