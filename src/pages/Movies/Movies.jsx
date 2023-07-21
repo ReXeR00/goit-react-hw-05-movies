@@ -1,6 +1,11 @@
-const Movie = () => {
+import SearchBar from '../../components/SearchBar/SearchBar';
 
-    return <div></div>;
+const Movie = () => {
+  return (
+    <div>
+      <SearchBar></SearchBar>
+    </div>
+  );
 };
 
 export default Movie;

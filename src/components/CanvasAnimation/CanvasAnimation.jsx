@@ -161,6 +161,9 @@ const CanvasAnimation = ({ children }) => {
         position: 'relative',
         width: '100%',
         height: '100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
       }}
     >
       <canvas
@@ -169,6 +172,7 @@ const CanvasAnimation = ({ children }) => {
           position: 'absolute',
           top: 0,
           left: 0,
+          width: '100%',
           zIndex: -2,
           backgroundImage:
             "url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg')",
