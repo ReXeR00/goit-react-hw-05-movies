@@ -5,8 +5,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 const StyledLink = styled(Link)`
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 8px 0;
+
   text-decoration: none;
   font-weight: 500;
   text-transform: uppercase;

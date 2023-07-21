@@ -64,7 +64,7 @@ export const App = () => {
       });
 
     // Fetch actors for a movie by movieId (for example, 12345)
-    fetchActors('Jason Statham')
+    fetchActors(346698)
       .then(actors => {
         console.log('Actors:', actors);
       })
@@ -73,7 +73,7 @@ export const App = () => {
       });
 
     // Fetch reviews for a movie by movieId (for example, 12345)
-    fetchReviews()
+    fetchReviews(346698)
       .then(reviews => {
         console.log('Reviews:', reviews);
       })
@@ -87,14 +87,20 @@ export const App = () => {
       <CanvasAnimation>
         <Navbar></Navbar>
 
-        <nav>
+        <nav style={{ marginBottom: '50px', marginTop: '30px' }}>
           <StyledLink to="/">Home</StyledLink>
           <StyledLink to="/Movies">Movies</StyledLink>
         </nav>
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />} />
+
             <Route path="/movies" element={<Movies />} />
+
+            <Route path="/movies/:movieId" element={<MovieDetails />}>
+              <Route path="/movies/:movieId/cast" element={<Cast />} />
+              <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
@@ -102,10 +108,3 @@ export const App = () => {
     </div>
   );
 };
-
-{
-  /* <Route path="/movies/:movieId" element={<Movies />}>
-<Route path="cast" element={<Cast />} />
-<Route path="/reviews" element={<Reviews />} />
-</Route> */
-}

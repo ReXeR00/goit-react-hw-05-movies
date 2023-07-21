@@ -31,7 +31,7 @@ export const fetchActors = async movieId => {
     `movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
   );
 
-  return response.data;
+  return response.data.cast;
 };
 
 export const fetchReviews = async movieId => {
@@ -39,5 +39,5 @@ export const fetchReviews = async movieId => {
     `movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
   );
 
-  return response.data;
+  return response.data.results;
 };

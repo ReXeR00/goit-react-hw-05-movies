@@ -161,15 +161,14 @@ const CanvasAnimation = ({ children }) => {
         position: 'relative',
         width: '100%',
         height: '100%',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
       }}
     >
       <canvas
         ref={canvasRef}
         style={{
           position: 'absolute',
+          backgroundRepeat: 'repeat',
+
           top: 0,
           left: 0,
           width: '100%',
