@@ -1,10 +1,10 @@
-import MovieList from 'components/MovieList/MovieList';
+import TrendingMovie from 'components/TrenidingMovie/TrendingMovie';
 import { HeadLine } from './Home.styled';
 const Home = () => {
   return (
     <div>
       <HeadLine>Trending today</HeadLine>
-      <MovieList></MovieList>
+      <TrendingMovie></TrendingMovie>
     </div>
   );
 };

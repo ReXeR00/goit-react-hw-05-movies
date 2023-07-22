@@ -7,7 +7,7 @@ import {
 import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
-const SearchBar = ({ onSubmit }) => {
+const SearchBar = ({ searchMovies }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = e => {
@@ -16,8 +16,7 @@ const SearchBar = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onsubmit(inputValue);
-    setInputValue('');
+    searchMovies(inputValue.toLowerCase());
   };
   return (
     <SearchForm onSubmit={handleSubmit}>
@@ -28,9 +27,10 @@ const SearchBar = ({ onSubmit }) => {
       <SearchInput
         name="searchName"
         type="text"
+        autoFocus
         id="search"
         value={inputValue}
-        onSubmit={handleChange}
+        onChange={handleChange}
       ></SearchInput>
     </SearchForm>
   );

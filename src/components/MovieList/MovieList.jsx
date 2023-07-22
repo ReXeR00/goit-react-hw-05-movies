@@ -1,33 +1,30 @@
-import { List, ListElement } from './MovieList.styled';
-import { useEffect, useState } from 'react';
-import Movie from 'pages/Movies/Movies';
-import { fetchTrending } from '../../services/TMDB-API';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { List, Item, MovieLink } from './MovieList.styled';
 
-const MovieList = () => {
-  const [trendingMovies, setTrendingMovie] = useState([]);
-
-  useEffect(() => {
-    fetchTrending()
-      .then(trendingMovies => {
-        setTrendingMovie(trendingMovies);
-      })
-      .catch(error => {
-        console.error('Error fetching trending movies:', error);
-      });
-  });
+const MovieList = ({ films }) => {
+  const location = useLocation();
 
   return (
-    <div>
-      <List>
-        {trendingMovies.map(movie => (
-          <ListElement key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-          </ListElement>
-        ))}
-      </List>
-    </div>
+    <List>
+      {films.map(film => (
+        <Item key={film.id}>
+          <MovieLink to={`/movies/${film.id}`} state={{ from: location }}>
+            {film.title}
+          </MovieLink>
+        </Item>
+      ))}
+    </List>
   );
 };
 
 export default MovieList;
+
+EditorList.propTypes = {
+  films: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
+};
