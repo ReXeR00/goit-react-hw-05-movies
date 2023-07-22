@@ -1,4 +1,4 @@
-import TrendingMovie from 'components/TrenidingMovie/TrendingMovie';
+import TrendingMovie from '../../components/TrenidingMovie/TrendingMovie';
 import { HeadLine } from './Home.styled';
 const Home = () => {
   return (

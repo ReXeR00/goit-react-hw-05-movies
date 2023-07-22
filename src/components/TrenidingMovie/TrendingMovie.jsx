@@ -14,7 +14,7 @@ const TrendingMovie = () => {
       .catch(error => {
         console.error('Error fetching trending movies:', error);
       });
-  });
+  }, []);
 
   return (
     <div>

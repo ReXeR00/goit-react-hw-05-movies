@@ -1,27 +1,15 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { Button } from './BackLink.styled';
 
-const StyledLink = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-
-  text-decoration: none;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: pink;
-
-  :hover {
-    color: orangered;
-  }
-`;
-
-const BackLink = ({ to, children }) => {
+const BackLink = () => {
+  const location = useLocation();
   return (
-    <StyledLink to={to}>
-      <AiOutlineArrowLeft size="24" />
-      {children}
-    </StyledLink>
+    <Link to={location.state?.from ?? '/'}>
+      <Button type="button">
+        <AiOutlineArrowLeft size="24" /> GO BACK
+      </Button>
+    </Link>
   );
 };
 

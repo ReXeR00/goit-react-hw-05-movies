@@ -13,7 +13,7 @@ export const Item = styled.li`
 
 export const MovieLink = styled(Link)`
   text-decoration: none;
-  color: #191d1e;
+  color: white;
 
   &:hover {
     color: tomato;

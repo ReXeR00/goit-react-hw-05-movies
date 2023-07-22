@@ -15,7 +15,7 @@ export const fetchMovie = async movie => {
     `search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${movie}`
   );
 
-  return response.data;
+  return response.data.results;
 };
 
 export const fetchMovieDetails = async movieId => {

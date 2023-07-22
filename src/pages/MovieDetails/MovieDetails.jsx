@@ -17,7 +17,7 @@ import { useParams, Outlet } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 
 const MovieDetails = () => {
-  const backLinkHref = '/';
+  
 
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
@@ -63,7 +63,7 @@ const MovieDetails = () => {
         }}
       >
         <div>
-          <BackLink to={backLinkHref}>Go home</BackLink>
+          <BackLink/>
         </div>
         <MovieContainer>
           {loading && <Loader />}

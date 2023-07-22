@@ -1,13 +1,14 @@
 import SearchBar from '../../components/SearchBar/SearchBar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchMovie } from '../../services/TMDB-API';
-import TrendingMovie from 'components/TrenidingMovie/TrendingMovie';
+import MovieList from '../../components/MovieList/MovieList';
+import { Warning } from './Movies.styled';
 
 const Movie = () => {
   const [searchFilms, setSearchFilms] = useState([]);
   const [noMoviesText, setNoMoviesText] = useState(false);
 
-  const FindMovie = queryMovie => {
+  const findMovie = queryMovie => {
     fetchMovie(queryMovie)
       .then(searchResults => {
         setSearchFilms(searchResults);
@@ -18,13 +19,19 @@ const Movie = () => {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    console.log('This is searchFilms: ', searchFilms);
+  }, [searchFilms]);
   return (
     <main>
-      <SearchBar searchMovies={FindMovie}></SearchBar>
+      <SearchBar searchMovies={findMovie}></SearchBar>
       {noMoviesText && (
-        <p>There is no movies with this request. Please, try again</p>
+        <Warning>
+          There is no movies with this request. Please, try again
+        </Warning>
       )}
-      {searchFilms && <TrendingMovie films={searchFilms} />}
+      {searchFilms.length > 0 && <MovieList films={searchFilms} />}
     </main>
   );
 };

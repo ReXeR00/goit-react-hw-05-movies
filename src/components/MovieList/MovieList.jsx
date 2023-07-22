@@ -20,7 +20,7 @@ const MovieList = ({ films }) => {
 
 export default MovieList;
 
-EditorList.propTypes = {
+MovieList.propTypes = {
   films: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
