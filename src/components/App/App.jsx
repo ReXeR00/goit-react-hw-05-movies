@@ -2,14 +2,8 @@ import { Routes, NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import CanvasAnimation from '../CanvasAnimation/CanvasAnimation';
 import Navbar from 'components/NavBar/NavBar';
-import {
-  fetchTrending,
-  fetchMovie,
-  fetchMovieDetails,
-  fetchActors,
-  fetchReviews,
-} from '../../services/TMDB-API';
-import { useEffect, lazy, Suspense } from 'react';
+
+import {  lazy, Suspense } from 'react';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Movies = lazy(() => import('pages/Movies/Movies'));
@@ -34,8 +28,6 @@ export const App = () => {
       text-decoration: underline;
     }
   `;
-
-
 
   return (
     <div>
