@@ -1,7 +1,7 @@
 import { fetchReviews } from '../../services/TMDB-API';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { List } from './Reviews.styled';
+import { List, ListAuthor, ListReviewContent } from './Reviews.styled';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -28,8 +28,8 @@ const Reviews = () => {
           <List>
             {reviews.map(review => (
               <li key={review.id}>
-                <h2>Author: {review.author}</h2>
-                <p>{review.content}</p>
+                <ListAuthor>Author: {review.author}</ListAuthor>
+                <ListReviewContent>{review.content}</ListReviewContent>
               </li>
             ))}
           </List>
